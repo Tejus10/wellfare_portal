@@ -7,8 +7,9 @@ from django.utils import timezone
 
 class FeedPost(models.Model):
 	title= models.CharField(max_length=50)
+	subtitle=models.TextField(null=True)
 	content=models.TextField()
-	author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=User.objects.get(username="Bhanu").id)
+	author = models.ForeignKey(settings.AUTH_USER_MODEL, null=True,on_delete=models.SET_NULL)
 	published_date=models.DateTimeField(default=timezone.now)
 
 	def __str__(self):
