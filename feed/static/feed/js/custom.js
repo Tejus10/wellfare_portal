@@ -33,13 +33,24 @@
       dots: true,
     });
 
-    $('.post-slider').owlCarousel({
+    $('.message-slider').owlCarousel({
       animateOut: 'fadeOut',
       items:1,
       loop:true,
       autoplayHoverPause: false,
       autoplay: true,
       smartSpeed: 1000,
+      dots: true,
+      nav:false,
+    });
+    $('.post-slider').owlCarousel({
+      animateIn:'slideInUp',
+      animateOut: 'slideOutUp',
+      items:1,
+      loop:true,
+      autoplayHoverPause: false,
+      autoplay: true,
+      smartSpeed: 2000,
       dots: false,
       nav:true,
     });

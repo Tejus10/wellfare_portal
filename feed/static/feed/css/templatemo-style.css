@@ -120,7 +120,8 @@ http://www.templatemo.com/tm-515-eatery
 
   #team, 
   #menu,
-  #testimonial {
+  #testimonial,
+  #feed {
     text-align: center;
   }
 
@@ -691,6 +692,58 @@ http://www.templatemo.com/tm-515-eatery
     margin-left: 5px;
   }
 
+  /*---------------------------------------
+      FEED             
+  -----------------------------------------*/
+
+  #feed {
+    /*background: url('../images/testimonial-bg.jpg') center center no-repeat;*/
+    /*background-size: cover;*/
+  }
+  #feed .overlay{
+    background: #f9f9f9;
+  }
+
+  #feed .owl-dots {
+    position: relative;
+    top: 0;
+    right: 0;
+    justify-content: center;
+  }
+
+  #feed .owl-theme .owl-dots .owl-dot,
+  #feed .owl-theme .owl-dots .owl-dot span {
+    display: inline-block;
+  }
+
+  #feed .owl-theme .owl-dots .owl-dot span {
+    margin: 20px 5px;
+  }
+
+  #feed h2 {
+    color: #000000;
+  }
+
+  #feed p,
+  .tst-author h4,
+  .tst-author span {
+    display: inline;
+  }
+
+  #feed p {
+    color: #111111;
+    font-size: 15px;
+    line-height: 35px;
+  }
+   #postimg{
+    display:block;
+    margin-right:auto;
+    margin-left:auto;
+    max-height:600px;
+    width:auto;
+    max-width:700px;
+    
+  }
 
 
   /*---------------------------------------
@@ -904,6 +957,9 @@ http://www.templatemo.com/tm-515-eatery
     }
 
     #testimonial {
+      background-position: 50% 0 !important;
+    }
+    #feed {
       background-position: 50% 0 !important;
     }
 

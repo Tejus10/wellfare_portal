@@ -192,7 +192,43 @@ http://www.templatemo.com/tm-515-eatery
 
                     <div class="col-md-12 col-sm-12">
                          <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
-                              <h2>Posts</h2>
+                              <h2>Messages</h2>
+                             
+                         </div>
+                    </div>  
+
+                    <div class="col-md-offset-2 col-md-8 col-sm-12">
+                         <div class=" message-slider owl-carousel owl-theme">
+                              {% for message in messages %}
+                              <div class="item">
+                                   <h2>"{{message.title}}"</h2>
+                                   <!-- <h3>--{{message.subtitle}}</h3> -->
+                                   <p>{{message.content}}</p>
+                                        <div class="tst-author">
+                                             <h4>{{message.author.get_full_name|default:message.author.username}}</h4>
+                                             <span>{{message.published_date.date}}</span>
+                                        </div>
+                              </div>
+                              {% endfor %}
+                              
+
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+     </section>
+
+     <!--Feed-->
+
+      <section id="feed" data-stellar-background-ratio="0.5">
+          <div class="overlay"></div>
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-12 col-sm-12">
+                         <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                              <h2>Feed</h2>
                              
                          </div>
                     </div>  
@@ -201,9 +237,9 @@ http://www.templatemo.com/tm-515-eatery
                          <div class=" post-slider owl-carousel owl-theme">
                               {% for post in posts %}
                               <div class="item">
-                                   <h2>"{{post.title}}"</h2>
+                                   <img id= "postimg" class='img-responsive' src='{{post.photo.url}}'>
                                    <!-- <h3>--{{post.subtitle}}</h3> -->
-                                   <p>{{post.content}}</p>
+                                   <p>{{post.caption}}</p>
                                         <div class="tst-author">
                                              <h4>{{post.author.get_full_name|default:post.author.username}}</h4>
                                              <span>{{post.published_date.date}}</span>
@@ -217,7 +253,7 @@ http://www.templatemo.com/tm-515-eatery
 
                </div>
           </div>
-     </section>  
+     </section>   
 
      <!-- SCRIPTS -->
      <script src="{% static 'feed/js/jquery.js' %}"></script>
