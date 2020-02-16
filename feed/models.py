@@ -84,8 +84,8 @@ class chairman(models.Model):
 
 
 class gallery(models.Model):
-	photo = models.ImageField(upload_to='images/',null=True)
-	video = models.FileField(upload_to='videos/',null=True)
+	photo = models.ImageField(upload_to='images/',null=True,blank = True)
+	video = models.FileField(upload_to='videos/',null=True,blank = True)
 
 class activities(models.Model):
 	title = models.CharField(max_length=150)

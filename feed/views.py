@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import *
+from .forms import *
+from django.contrib.auth.decorators import login_required
 
-# Create your views here.
+
 def homepage(request):
 	messages= Message.objects.all().order_by("-published_date")
 	posts=Post.objects.all().order_by("-published_date")
@@ -54,3 +56,33 @@ def gall(request):
 			'gallerys':gallerys,
 			}
 	return render(request,"feed/gallery.html",context)		
+
+
+@login_required
+def self_help(request):
+	form = Self_help(request.POST or None, request.FILES or None)
+	if request.method == 'POST':
+		post = form.save()
+		post.author = request.user
+		post.save()
+		return redirect('home')
+	context = {
+		'form' : form,
+		'title':'New Post'
+    }
+	return render(request,'feed/self_help_form.html',context)
+
+
+
+@login_required
+def activity_add(request):
+    form = activities_form(request.POST or None, request.FILES or None)
+    if form.is_valid():
+    	activity = form.save()
+    	return redirect('home')
+
+    context = {
+        'form' : form,
+        'title':'New Activity'
+    }
+    return render(request,'feed/activity_form.html',context)	

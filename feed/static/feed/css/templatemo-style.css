@@ -643,8 +643,9 @@ http://www.templatemo.com/tm-515-eatery
   -----------------------------------------*/
 
   #testimonial {
-    background: url('../images/testimonial-bg.jpg') center center no-repeat;
+    /*background: url('../images/testimonial-bg.jpg') center center no-repeat;*/
     background-size: cover;
+    background-color: rgb(255,255,255);
   }
 
   #testimonial .owl-dots {
@@ -955,7 +956,9 @@ http://www.templatemo.com/tm-515-eatery
     #menu .menu-thumb {
       width: 103%;
     }
-
+    #announcement {
+      background-position: 50% 0 !important;
+    }
     #testimonial {
       background-position: 50% 0 !important;
     }

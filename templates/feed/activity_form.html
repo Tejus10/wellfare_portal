@@ -1,17 +1,18 @@
+{% load crispy_forms_tags %}
 {% load static %}
 <!DOCTYPE html>
 <html>
 <head>
 
 
-  <meta charset="utf-8">
+	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-    
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="{% static 'feed/css/gallery.css' %}">
+		
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -22,13 +23,13 @@
  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
 <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 
-  <title>CENTRE FOR HOLISTIC WELLBEING - Gallery</title>
+	<title>CENTRE FOR HOLISTIC WELLBEING - Activity Form</title>
 
 </head>
 <body>
 
-  <!-- header -->
-  
+	<!-- header -->
+	
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <a class="navbar-brand" href="https://www.iitg.ac.in/"><img class="logo" src="{% static 'feed/images/logo.png' %}" height="60 px" style="margin-left: 100px;"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,11 +50,11 @@
       <li class="nav-item  mx-3">
         <a class="nav-link" href="{% url 'home' %}#feed">Self Help Resources</a>
       </li>   
-      <li class="nav-item active  mx-3">
+      <li class="nav-item mx-3">
         <a class="nav-link" href="{% url 'gallery' %}">Gallery<span class="sr-only">(current)</span></a>
       </li> 
       {% if user.is_authenticated %} 
-      <li class="nav-item  mx-3">
+      <li class="nav-item active  mx-3">
         <a class="nav-link" href="{% url 'add_activity' %}">Add activity</a>
       </li>   
       <li class="nav-item mx-3">
@@ -71,86 +72,21 @@
   </div>
 </nav>
 
-
-
- <div class="container page-top " style="margin-top: 200px">
-
-  <h1 class="mt-5 text-center" style="color: white; font-family: Harrington;margin-bottom: 50px;font-size: 60px;">GALLERY</h1>
-      <div class="row"> 
-         
-          {% for pic in gallerys %}
-          {% if pic.photo %}
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a href="{{ pic.photo.url }}" class="fancybox" rel="ligthbox">
-                    <img  src="{{ pic.photo.url }}" class="zoom img-fluid "  alt="">
-                   
-                </a>
-            </div>
-            {% endif %}
-            {% endfor %}
-
-          
-      </div>
-
-        
-            
-  </div>
-
-
-  <div class="container page-top " style="margin-top: 200px">
-
-
-      <div class="row"> 
-         
-          {% for vid in gallerys %}
-          {% if vid.video %}
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a href="{{ vid.video.url }}" class="fancybox" rel="ligthbox">
-                    <video src="{{ vid.video.url }}" class="zoom img-fluid "  alt="">
-                   
-                </a>
-            </div>
-            {% endif %}
-            {% endfor %}
-
-          
-      </div>
-
-        
-            
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-    <script type="text/javascript">
-      $(document).ready(function(){
-  $(".fancybox").fancybox({
-        openEffect: "none",
-        closeEffect: "none"
-    });
-    
-    $(".zoom").hover(function(){
-    
-    $(this).addClass('transition');
-  }, function(){
-        
-    $(this).removeClass('transition');
-  });
-});
-    
-    </script>
-
-
+<div class = "content-section container jumbotron " style=" margin-top: 100px">
+		<form method="POST" enctype="multipart/form-data">
+		    		{% csrf_token %}
+		    		<fieldset class="form-group">
+		    			<legend class="border-bottom mb-4">Add Activity</legend>
+		    			{{ form|crispy }}
+		    		</fieldset>
+		    		<div class="form-group">
+		    			<button class="btn btn-outline-info" type="submit">Save</button>
+		    		</div>
+		    		
+		    	</form>
+   </div>
 
    
-</body>
-</html>
+ </body>
+ </html>
+ 

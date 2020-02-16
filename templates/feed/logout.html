@@ -1,0 +1,70 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+
+
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+ 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+	<title>CENTRE FOR HOLISTIC WELLBEING - login</title>
+
+</head>
+<body>
+
+	<!-- header -->
+	
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <a class="navbar-brand" href="https://www.iitg.ac.in/"><img class="logo" src="{% static 'feed/images/logo.png' %}" height="60 px" style="margin-left: 100px;"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto container">
+      <li class="nav-item ml-4 mr-3">
+        <a class="nav-link" href="{% url 'home' %}">Home</a>
+      </li>
+      <li class="nav-item mx-3">
+        <a class="nav-link" href="#">Activities</a>
+      </li>
+       <li class="nav-item  mx-3">
+        <a class="nav-link" href="{% url 'team' %}">Team</a>
+      </li>
+      <li class="nav-item  mx-3">
+        <a class="nav-link" href="{% url 'home' %}#feed">Self Help Resources</a>
+      </li>   
+      <li class="nav-item  mx-3">
+        <a class="nav-link" href="{% url 'gallery' %}">Gallery</a>
+      </li>
+      <li class="nav-item  mx-3">
+        <a class="nav-link" href="{% url 'login' %}">Login</a>
+      </li> 
+    </ul>
+  </div>
+</nav>
+
+<div class="jumbotron" style="margin-top: 100px">
+	<h1 class="text-center">You have been logged out</h1>
+	<div class="border-top pt-3">
+		<a href="{% url 'login' %}"><h5 class="text-center">Log In Again</h5></a>
+			
+		
+	</div>	
+</div>	
