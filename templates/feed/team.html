@@ -1,0 +1,226 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'feed/css/activity.css' %}">
+
+	<title>CENTRE FOR HOLISTIC WELLBEING - Activities</title>
+
+</head>
+<body>
+
+	<!-- header -->
+	
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="https://www.iitg.ac.in/"><img class="logo" src="{% static 'feed/images/logo.png' %}" height="60 px" style="margin-left: 100px;"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto container">
+      <li class="nav-item ml-4 mr-3">
+        <a class="nav-link" href="{% url 'home' %}">Home</a>
+      </li>
+      <li class="nav-item   mx-3">
+        <a class="nav-link" href="{% url 'activity' %}">Activities<span class="sr-only">(current)</span></a>
+      </li>
+       <li class="nav-item active mx-3">
+        <a class="nav-link" href="{% url 'team' %}">Team</a>
+      </li>
+      <li class="nav-item  mx-3">
+        <a class="nav-link" href="{% url 'home' %}">Self Help Resources</a>
+      </li>   
+      <li class="nav-item  mx-3">
+        <a class="nav-link" href="{% url 'gallery' %}">Gallery</a>
+      </li>    
+    </ul>
+  </div>
+</nav>
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'feed/css/activity.css' %}">
+
+  <title>CENTRE FOR HOLISTIC WELLBEING - Activities</title>
+
+</head>
+<body>
+
+  <!-- header -->
+  
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <a class="navbar-brand" href="https://www.iitg.ac.in/"><img class="logo" src="{% static 'feed/images/logo.png' %}" height="60 px" style="margin-left: 100px;"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto container">
+      <li class="nav-item ml-4 mr-3">
+        <a class="nav-link" href="{% url 'home' %}">Home</a>
+      </li>
+      <li class="nav-item mx-3">
+        <a class="nav-link" href="{% url 'activity' %}">Activities<span class="sr-only">(current)</span></a>
+      </li>
+       <li class="nav-item active mx-3">
+        <a class="nav-link" href="{% url 'team' %}">Team</a>
+      </li>
+      <li class="nav-item  mx-3">
+        <a class="nav-link" href="{% url 'home' %}">Self Help Resources</a>
+      </li>   
+      <li class="nav-item  mx-3">
+        <a class="nav-link" href="{% url 'gallery' %}">Gallery</a>
+      </li>    
+    </ul>
+  </div>
+</nav>
+
+<div class="container12">
+  <div class="container-fluid">
+
+  
+<h1 class="mt-2 text-center" style="color: white; font-family: Georgia;margin-bottom: 100px;">COUNSELLLORS</h1>
+</div>
+</div>
+{% if counsellors %}
+{% for c in counsellors %}
+  <div class="container1" style="margin-bottom: 100px;">
+    <main role="main" class="container">
+      <div class="row">
+    <div class="card mx-3 my-3 col-4">
+       <div class="card__image-container">
+         <img class="card__image" src="{{ c.photo.url }}" alt="">
+      </div>
+        
+        <svg class="card__svg" viewBox="0 0 800 500">
+
+          <path d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500" stroke="transparent" fill="#333"/>
+          <path class="card__line" d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400" stroke="pink" stroke-width="3" fill="transparent"/>
+        </svg>
+      
+       <div class="card__content">
+         <h1 class="card__title">{{ c.name }}</h1>
+      </div>
+      </div>
+         <p class="col" style="color: white; font-family: Comic Sans MS; font-size: 20px;">{{ c.about }}<br>{{ c.contact }}</p>
+         <!-- <p class="col" style="color: white; font-family: Comic Sans MS;margin-top: 200px; font-size: 20px;">{{ c.contact }}</p> -->
+     </div>
+      </main>
+  </div>
+{% endfor %}
+{% else %}
+  <div class="container1">No Counsellors Found</div>
+
+{% endif %}
+<div class="container13">
+  <div class="container-fluid">
+<h1 class="mt-2 text-center" style="color: white; font-family: Georgia;">PSYCHIATRISTS</h1>
+</div>
+</div>
+{% if psychiatrists %}
+{% for ps in psychiatrists %}
+  <div class="container1" style="margin-bottom: 100px;" >
+    <main role="main" class="container">
+      <div class="row">
+    <div class="card mx-3 my-3 col-4">
+       <div class="card__image-container">
+         <img class="card__image" src="{{ ps.photo.url }}" alt="">
+      </div>
+        
+        <svg class="card__svg" viewBox="0 0 800 500">
+
+          <path d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500" stroke="transparent" fill="#333"/>
+          <path class="card__line" d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400" stroke="pink" stroke-width="3" fill="transparent"/>
+        </svg>
+      
+       <div class="card__content">
+         <h1 class="card__title">{{ ps.name }}</h1>
+      </div>
+      </div>
+         <p class="col" style="color: white; font-family: Comic Sans MS; font-size: 20px;">{{ ps.about }}<br>{{ ps.contact }}</p>
+         <!-- <p class="col" style="color: white; font-family: Comic Sans MS;margin-top: 200px; font-size: 20px;">{{ ps.contact }}</p> -->
+     </div>
+      </main>
+  </div>
+{% endfor %}
+{% else %}
+  <div class="container1">No Psychiatrists Found</div>
+
+{% endif %}
+<div class="container13">
+  <div class="container-fluid">
+<h1 class="mt-2 text-center" style="color: white; font-family: Georgia;">CHAIRMAN</h1>
+</div>
+</div>
+{% if chairmans %}
+{% for ch in chairmans %}
+  <div class="container1" style="margin-bottom: 100px;" >
+    <main role="main" class="container">
+      <div class="row">
+    <div class="card mx-3 my-3 col-4">
+       <div class="card__image-container">
+         <img class="card__image" src="{{ ch.photo.url }}" alt="">
+      </div>
+        
+        <svg class="card__svg" viewBox="0 0 800 500">
+
+          <path d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500" stroke="transparent" fill="#333"/>
+          <path class="card__line" d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400" stroke="pink" stroke-width="3" fill="transparent"/>
+        </svg>
+      
+       <div class="card__content">
+         <h1 class="card__title">{{ ch.name }}</h1>
+      </div>
+      </div>
+         <p class="col" style="color: white; font-family: Comic Sans MS;font-size: 20px;">{{ ch.about }}<br>{{ ch.contact }}</p>
+         <!-- <p style="color: white; font-family: Comic Sans MS;margin-top: 200px; font-size: 20px;">{{ ch.contact }}</p> -->
+     </div>
+      </main>
+  </div>
+{% endfor %}
+{% else %}
+  <div class="container1">No Chairmans Found</div>
+
+{% endif %}
+
+  <div class="container13">
+  <div class="container">
+    <p style="color: white; font-family: Comic Sans MS; font-size: 20px;">
+{{ counsellor_timings.timings }}
+</p>
+</div>
+</div>
+
+</body>
+</html>
+
+   
+</body>
+</html>

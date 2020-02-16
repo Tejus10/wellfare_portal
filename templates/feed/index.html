@@ -1,36 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+{% extends "feed/base.html" %}
+{% load static %}
 
-     <title>Holistic Welfare Center</title>
-<!-- 
 
-Eatery Cafe Template 
-
-http://www.templatemo.com/tm-515-eatery
-
--->
-     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-     <meta name="description" content="">
-     <meta name="keywords" content="">
-     <meta name="author" content="">
-     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-     {% load static %}
-
-     <link rel="stylesheet" href="{% static 'feed/css/bootstrap.min.css' %}">
-     <link rel="stylesheet" href="{% static 'feed/css/font-awesome.min.css' %}">
-     <link rel="stylesheet" href="{% static 'feed/css/animate.css' %}">
-     <link rel="stylesheet" href="{% static 'feed/css/owl.carousel.css' %}">
-     <link rel="stylesheet" href="{% static 'feed/css/owl.theme.default.min.css' %}">
-     <link rel="stylesheet" href="{% static 'feed/css/magnific-popup.css' %}">
-
-     <!-- MAIN CSS -->
-     <link rel="stylesheet" href="{% static 'feed/css/templatemo-style.css' %}">
-
-</head>
-<body>
+     {% block content %}
 
      <!-- PRE LOADER -->
      <section class="preloader">
@@ -52,6 +24,8 @@ http://www.templatemo.com/tm-515-eatery
                          <span class="icon icon-bar"></span>
                          <span class="icon icon-bar"></span>
                     </button>
+           <img class="logo" src="{% static 'feed/images/logo.png' %}" height="60 px" />
+    
 
                     <!-- lOGO TEXT HERE -->
                </div>
@@ -60,10 +34,24 @@ http://www.templatemo.com/tm-515-eatery
                <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-nav-first" id="baba">
                          <li><a href="#home" class="smoothScroll">Home</a></li>
-                         <li><a href="#about" class="smoothScroll">About</a></li>
-                         <li><a href="#team" class="smoothScroll">Chef</a></li>
-                         <li><a href="#menu" class="smoothScroll">Menu</a></li>
+                         <li><a href="{% url 'activity' %}">Activities</a></li>
+                         <li><a href="{% url 'team' %}" class="smoothScroll">Team</a></li>
+                         <li><a href="#feed" class="smoothScroll">Self Help Resources</a></li>
+                         <li><a href="{% url 'gallery' %}" class="smoothScroll">Gallery</a></li>
                          
+                     <!--    <li> <div class="dropdown">
+                           <button class="btn btn-link dropdown-toggle smoothScroll" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                             Team
+                           </button>
+                           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                             <a class="dropdown-item" href="#">Counsellors</a>
+                             <a class="dropdown-item" href="#">Psychiatrist</a>
+                             <a class="dropdown-item" href="#">Chairman</a>
+                           </div>
+                         </div>
+                    </li> -->
+                      
+               
                     </ul>
 
                     
@@ -82,8 +70,8 @@ http://www.templatemo.com/tm-515-eatery
                               <div class="caption">
                                    <div class="container">
                                         <div class="col-md-8 col-sm-12">
-                                             <h3>Eatery Cafe &amp; Restaurant</h3>
-                                             <h1>Our mission is to provide an unforgettable experience</h1>
+                                             <h3>Welfare Board, IIT Guwahati</h3>
+                                             <h1>Centre for Holistic Wellbeing</h1>
                                         </div>
                                    </div>
                               </div>
@@ -93,8 +81,8 @@ http://www.templatemo.com/tm-515-eatery
                               <div class="caption">
                                    <div class="container">
                                         <div class="col-md-8 col-sm-12">
-                                             <h3>Your Perfect Breakfast</h3>
-                                             <h1>The best dinning quality can be here too!</h1>
+                                             <h3>Welfare Board, IIT Guwahati</h3>
+                                             <h1>Centre for Holistic Wellbeing</h1>
                                              
                                         </div>
                                    </div>
@@ -105,8 +93,8 @@ http://www.templatemo.com/tm-515-eatery
                               <div class="caption">
                                    <div class="container">
                                         <div class="col-md-8 col-sm-12">
-                                             <h3>New Restaurant in Town</h3>
-                                             <h1>Enjoy our special menus every Sunday and Friday</h1>
+                                             <h3>Welfare Board, IIT Guwahati</h3>
+                                             <h1>Centre for Holistic Wellbeing</h1>
                                         </div>
                                    </div>
                               </div>
@@ -128,17 +116,21 @@ http://www.templatemo.com/tm-515-eatery
                     <div class="col-md-12 col-sm-12">
                          <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
                               <h2>Meet our counsellors</h2>
+                    <h3>{{ counsellor_timings.timings }}</h3>
                          </div>
                     </div>
 
-                    <div class="col-md-4 col-sm-4">
+                    <div class="col-md-6 col-sm-6">
                          <div class="team-thumb wow fadeInUp" data-wow-delay="0.2s">
+                              <a href="{% url 'team' %}">
                               <img src="{% static 'feed/images/newsac.jpeg' %}" height="300 px" class="img-responsive" alt="">
+                               
                                    <div class="team-hover">
                                         <div class="team-item">
                                             
                                         </div>
                                    </div>
+                                   </a>
                          </div>
                          <div class="team-info">
                               <h3>New SAC</h3>
@@ -146,29 +138,16 @@ http://www.templatemo.com/tm-515-eatery
                          </div>
                     </div>
 
-                    <div class="col-md-4 col-sm-4">
-                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
-                              <img src="{% static 'feed/images/yourdost.png'%}" class="img-responsive" alt="">
-                                   <div class="team-hover">
-                                        <div class="team-item">
-                                             
-                                        </div>
-                                   </div>
-                         </div>
-                         <div class="team-info">
-                              <h3>Your dost</h3>
-                              
-                         </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-4">
+                    <div class="col-md-6 col-sm-6">
                          <div class="team-thumb wow fadeInUp" data-wow-delay="0.6s">
+                              <a href="#">
                               <img src="{% static 'feed/images/anonymous.png' %}" class="img-responsive" alt="">
                                    <div class="team-hover">
                                         <div class="team-item">
                                              
                                         </div>
                                    </div>
+                              </a>
                          </div>
                          <div class="team-info">
                               <h3>Anonymous</h3>
@@ -223,47 +202,136 @@ http://www.templatemo.com/tm-515-eatery
 
       <section id="feed" data-stellar-background-ratio="0.5">
           <div class="overlay"></div>
-          <div class="container">
+          <div class="container-fluid">
                <div class="row">
 
                     <div class="col-md-12 col-sm-12">
                          <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
-                              <h2>Feed</h2>
+                              <h2>Self Help Resources</h2>
                              
                          </div>
                     </div>  
 
-                    <div class="col-md-offset-2 col-md-8 col-sm-12">
-                         <div class=" post-slider owl-carousel owl-theme">
-                              {% for post in posts %}
-                              <div class="item">
-                                   <img id= "postimg" class='img-responsive' src='{{post.photo.url}}'>
-                                   <!-- <h3>--{{post.subtitle}}</h3> -->
-                                   <p>{{post.caption}}</p>
-                                        <div class="tst-author">
-                                             <h4>{{post.author.get_full_name|default:post.author.username}}</h4>
-                                             <span>{{post.published_date.date}}</span>
-                                        </div>
-                              </div>
-                              {% endfor %}
-                              
-
-                         </div>
+                    <div class="box">
+                         {% for post in posts %}
+                      <div id="card-container">
+                        <div id="card">
+                          <div class="front face">
+                            <img class="cardg" src='{{post.photo.url}}'>
+                          </div>
+                          <div class="back face">
+                            
+                            <h6>{{post.caption}}</h6>
+                            <h1 class="artist">{{post.author.get_full_name|default:post.author.username}}</h1>
+                            <p class="date">{{post.published_date.date}}</p>
+                          </div>
+                        </div>
+                      </div>
+                      {% endfor %}
                     </div>
 
                </div>
           </div>
-     </section>   
+     </section> 
 
-     <!-- SCRIPTS -->
-     <script src="{% static 'feed/js/jquery.js' %}"></script>
-     <script src="{% static 'feed/js/bootstrap.min.js' %}"></script>
-     <script src="{% static 'feed/js/jquery.stellar.min.js' %}"></script>
-     <script src="{% static 'feed/js/wow.min.js' %}"></script>
-     <script src="{% static 'feed/js/owl.carousel.min.js' %}"></script>
-     <script src="{% static 'feed/js/jquery.magnific-popup.min.js' %}"></script>
-     <script src="{% static 'feed/js/smoothscroll.js' %}"></script>
-     <script src="{% static 'feed/js/custom.js' %}"></script>
 
-</body>
-</html>
+          <button class="open-button" onclick="openForm()">Chat</button>
+
+          <div class="chat-popup" id="myForm">
+            <form action="/action_page.php" class="form-container">
+              <h1>Chat with Our Counsellors</h1>
+
+              <label for="msg"><b>Message</b></label>
+              <textarea placeholder="Type message.." name="msg" required></textarea>
+
+              <button type="submit" class="btn">Send</button>
+              <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+          </div>
+
+          <script>
+          function openForm() {
+            document.getElementById("myForm").style.display = "block";
+          }
+
+          function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+          }
+          </script> 
+          <style>
+          body {font-family: Arial, Helvetica, sans-serif;}
+          * {box-sizing: border-box;}
+
+          /* Button used to open the chat form - fixed at the bottom of the page */
+          .open-button {
+            background-color: #555;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            opacity: 0.8;
+            position: fixed;
+            bottom: 23px;
+            right: 28px;
+            width: 280px;
+          }
+
+          /* The popup chat - hidden by default */
+          .chat-popup {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            right: 15px;
+            border: 3px solid #f1f1f1;
+            z-index: 9;
+          }
+
+          /* Add styles to the form container */
+          .form-container {
+            max-width: 300px;
+            padding: 10px;
+            background-color: white;
+          }
+
+          /* Full-width textarea */
+          .form-container textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+            resize: none;
+            min-height: 200px;
+          }
+
+          /* When the textarea gets focus, do something */
+          .form-container textarea:focus {
+            background-color: #ddd;
+            outline: none;
+          }
+
+          /* Set a style for the submit/send button */
+          .form-container .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom:10px;
+            opacity: 0.8;
+          }
+
+          /* Add a red background color to the cancel button */
+          .form-container .cancel {
+            background-color: red;
+          }
+
+          /* Add some hover effects to buttons */
+          .form-container .btn:hover, .open-button:hover {
+            opacity: 1;
+          }
+          </style>
+
+
+     {% endblock content %}
