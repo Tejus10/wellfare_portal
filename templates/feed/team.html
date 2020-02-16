@@ -4,58 +4,6 @@
 <head>
 
 
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-		
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'feed/css/activity.css' %}">
-
-	<title>CENTRE FOR HOLISTIC WELLBEING - Activities</title>
-
-</head>
-<body>
-
-	<!-- header -->
-	
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="https://www.iitg.ac.in/"><img class="logo" src="{% static 'feed/images/logo.png' %}" height="60 px" style="margin-left: 100px;"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto container">
-      <li class="nav-item ml-4 mr-3">
-        <a class="nav-link" href="{% url 'home' %}">Home</a>
-      </li>
-      <li class="nav-item   mx-3">
-        <a class="nav-link" href="{% url 'activity' %}">Activities<span class="sr-only">(current)</span></a>
-      </li>
-       <li class="nav-item active mx-3">
-        <a class="nav-link" href="{% url 'team' %}">Team</a>
-      </li>
-      <li class="nav-item  mx-3">
-        <a class="nav-link" href="{% url 'home' %}">Self Help Resources</a>
-      </li>   
-      <li class="nav-item  mx-3">
-        <a class="nav-link" href="{% url 'gallery' %}">Gallery</a>
-      </li>    
-    </ul>
-  </div>
-</nav>
-
-{% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-
-
   <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -75,7 +23,7 @@
 
   <!-- header -->
   
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="https://www.iitg.ac.in/"><img class="logo" src="{% static 'feed/images/logo.png' %}" height="60 px" style="margin-left: 100px;"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -86,14 +34,14 @@
       <li class="nav-item ml-4 mr-3">
         <a class="nav-link" href="{% url 'home' %}">Home</a>
       </li>
-      <li class="nav-item mx-3">
-        <a class="nav-link" href="{% url 'activity' %}">Activities<span class="sr-only">(current)</span></a>
+      <li class="nav-item   mx-3">
+        <a class="nav-link" href="{% url 'activity' %}">Activities</a>
       </li>
        <li class="nav-item active mx-3">
-        <a class="nav-link" href="{% url 'team' %}">Team</a>
+        <a class="nav-link" href="{% url 'team' %}">Team<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item  mx-3">
-        <a class="nav-link" href="{% url 'home' %}">Self Help Resources</a>
+        <a class="nav-link" href="{% url 'home' %}#feed">Self Help Resources</a>
       </li>   
       <li class="nav-item  mx-3">
         <a class="nav-link" href="{% url 'gallery' %}">Gallery</a>
@@ -101,6 +49,8 @@
     </ul>
   </div>
 </nav>
+
+
 
 <div class="container12">
   <div class="container-fluid">
@@ -129,7 +79,7 @@
          <h1 class="card__title">{{ c.name }}</h1>
       </div>
       </div>
-         <p class="col" style="color: white; font-family: Comic Sans MS; font-size: 20px;">{{ c.about }}<br>{{ c.contact }}</p>
+         <p class="col" style="color: white; font-family: Comic Sans MS; font-size: 20px;">{{ c.about }}<br><br>{{ c.contact }}</p>
          <!-- <p class="col" style="color: white; font-family: Comic Sans MS;margin-top: 200px; font-size: 20px;">{{ c.contact }}</p> -->
      </div>
       </main>
@@ -164,7 +114,7 @@
          <h1 class="card__title">{{ ps.name }}</h1>
       </div>
       </div>
-         <p class="col" style="color: white; font-family: Comic Sans MS; font-size: 20px;">{{ ps.about }}<br>{{ ps.contact }}</p>
+         <p class="col" style="color: white; font-family: Comic Sans MS; font-size: 20px;">{{ ps.about }}<br><br>{{ ps.contact }}</p>
          <!-- <p class="col" style="color: white; font-family: Comic Sans MS;margin-top: 200px; font-size: 20px;">{{ ps.contact }}</p> -->
      </div>
       </main>
@@ -199,7 +149,7 @@
          <h1 class="card__title">{{ ch.name }}</h1>
       </div>
       </div>
-         <p class="col" style="color: white; font-family: Comic Sans MS;font-size: 20px;">{{ ch.about }}<br>{{ ch.contact }}</p>
+         <p class="col" style="color: white; font-family: Comic Sans MS;font-size: 20px;">{{ ch.about }}<br><br>{{ ch.contact }}</p>
          <!-- <p style="color: white; font-family: Comic Sans MS;margin-top: 200px; font-size: 20px;">{{ ch.contact }}</p> -->
      </div>
       </main>

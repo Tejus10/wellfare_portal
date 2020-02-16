@@ -5,7 +5,7 @@ from .models import *
 def homepage(request):
 	messages= Message.objects.all().order_by("-published_date")
 	posts=Post.objects.all().order_by("-published_date")
-	abouts=about.objects.all()
+	abouts=about.objects.get(pk=1)
 	faqs=faq.objects.all()
 	psychiatrists=psychiatrist.objects.all()
 	chairmans=chairman.objects.all()
