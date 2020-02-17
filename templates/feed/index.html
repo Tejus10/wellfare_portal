@@ -140,7 +140,7 @@
           <div class="container">
                <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
                     <h2 class="text-center">About</h2>
-                    <h3 class="text-center container">{{ about.content }}</h3>
+                    <h3 class="text-center container">{{ about.content|linebreaksbr }}</h3>
                </div>
           </div>
      </section>
@@ -238,7 +238,7 @@
                       <div class="more-info">
                         <h1>{{ faq.question }}</h1>
                         <div class="coords">
-                          <span>{{ faq.answer }}</span>
+                          <span>{{ faq.answer|linebreaksbr }}</span>
                         </div>
                       </div>
                     </div>
@@ -263,8 +263,8 @@
                <div class="row">
                     <div class="col-md-12 col-sm-12">
                          <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
-                              <h2>Meet our counsellors</h2>
-                              <h3>{{ counsellor_timings.timings }}</h3>
+                              <h2>Counselling Services</h2>
+                              <h3>{{ counsellor_timings.timings|linebreaksbr }}</h3>
                          </div>
                     </div>
                     <div class="col-md-6 col-sm-6">
